@@ -864,11 +864,14 @@ a:focus {
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  position: relative;
+  position: fixed; /* Fija el botón en la pantalla */
+  bottom: 20px; /* Distancia desde la parte inferior */
+  right: 20px; /* Distancia desde la derecha */
   overflow: hidden;
   transition-duration: 0.3s;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
   background-color: #00d757;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 .sign {
@@ -886,6 +889,7 @@ a:focus {
 .sign svg path {
   fill: white;
 }
+
 .text {
   position: absolute;
   right: 0%;
@@ -915,6 +919,7 @@ a:focus {
   transition-duration: 0.3s;
   padding-right: 10px;
 }
+
 .Btn:active {
   transform: translate(2px, 2px);
 }
