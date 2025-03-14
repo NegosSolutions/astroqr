@@ -58,7 +58,7 @@
                             if (window.history.length > 1) {
                                 window.history.back();
                             } else {
-                                window.location.href = 'index.html'; // Redirigir al index si no hay historial
+                                window.location.href = '../categorias/productos/index.html'; // Redirigir al index si no hay historial
                             }
                         }
                         </script>
@@ -82,18 +82,18 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="left-images">
-                    <img src="../assets/images/globos/globosNeon1.jpg" alt="">
+                    <img src="../assets/images/globos/globosCromados1.jpg" alt="">
                     <img src="" alt="">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="right-content">
                     <br>
-                    <h4>Globos Neón 12"</h4>
+                    <h4>Globos Cromados 12"</h4>
                     <span class="price">$0.00</span>
                     <span class="info">
                         Detalles:<br><br>
-                        &ordm Globos color Neón<br>
+                        &ordm Globos Cromados<br>
                         &ordm Tamaño: 12 pulgadas<br>
                         &ordm Cantidad por empaque: 1 unidad<br>
                         &ordm Requiere ser inflado con helio o aire<br>
@@ -116,12 +116,18 @@
     <br>
     <select class="input" id="color">
         <option value="">Colores</option>
-        <option value="NaranjaNeon">Naranja Neón</option>
-        <option value="FucsiaNeon">Fucsia Neón</option>
-        <option value="MoradoNeon">Morado Neón</option>
-        <option value="AmarilloNeon">Amarillo Neón</option>
-        <option value="VerdeNeon">Verde Neón</option>
-        <option value="SurtidoNeon">Surtido Neón</option>
+        <option value="Azul">Azul</option>
+        <option value="Morado">Magenta</option>
+        <option value="VerdeEsmeralda ">Verde Esmeralda </option>
+        <option value="Lavanda">Lavanda</option>
+        <option value="Morado">Morado</option>
+        <option value="Plateado">Plateado</option>
+        <option value="VerdeLima">Verde Lima</option>
+        <option value="Dorado">Dorado</option>
+        <option value="RojoRuby">Rojo Ruby</option>
+        <option value="Plomo">Plomo</option>
+        <option value="RoseGold ">Rose Gold </option>
+        <option value="Surtido">Surtido</option>
     </select>
     
     <br><br>
@@ -172,7 +178,7 @@
                 alert("Por favor, selecciona una cantidad de piezas.")
             }
 
-            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${pcs} Globos Neón 12" color ${color} con la opción: ${opcion}`);
+            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${pcs} Globos Cromados 12" color ${color} con la opción: ${opcion}`);
             let url = `https://wa.me/+50764613930?text=${mensaje}`;
             window.location.href = url;
         }
