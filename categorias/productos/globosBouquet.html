@@ -58,7 +58,7 @@
                             if (window.history.length > 1) {
                                 window.history.back();
                             } else {
-                                window.location.href = 'index.html'; // Redirigir al index si no hay historial
+                                window.location.href = '../categorias/productos/index.html'; // Redirigir al index si no hay historial
                             }
                         }
                         </script>
@@ -82,18 +82,18 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="left-images">
-                    <img src="../assets/images/globos/globosPastel1.jpg" alt="">
+                    <img src="../assets/images/globos/GlobosBouquet1.jpg" alt="">
                     <img src="" alt="">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="right-content">
                     <br>
-                    <h4>Globos Pastel 12"</h4>
+                        <h4 id="producto">Bouquet de Globos</h4>
                     <span class="price">$0.00</span>
                     <span class="info">
                         Detalles:<br><br>
-                        &ordm Globos color Pastel<br>
+                        &ordm Bouquet de Globos<br>
                         &ordm Tamaño: 12 pulgadas<br>
                         &ordm Cantidad por empaque: 1 unidad<br>
                         &ordm Requiere ser inflado con helio o aire<br>
@@ -116,24 +116,14 @@
     <br>
     <select class="input" id="color">
         <option value="">Colores</option>
-        <option value="Sandia">Sandía</option>
-        <option value="Rosado">Rosado</option>
-        <option value="Naranja">Naranja</option>
-        <option value="Purpura">Purpura</option>
-        <option value="Amarillo">Amarillo</option>
-        <option value="Aqua">Aqua</option>
-        <option value="Azul">Azul</option>
-        <option value="Celeste">Celeste</option>
-        <option value="Surtido">Surtido</option>
-    </select>
-    
-    <br><br>
-    
-    <label for="pcs">Piezas por unidad</label><br>
-    <select class="input" id="pcs">
-        <option value="">Elige una opción</option>
-        <option value="15Pcs">Unidad de 15 Piezas</option>
-        <option value="50Pcs">Unidad de 50 Piezas</option>
+        <option value="GOLD">GOLD</option>
+        <option value="SL">SL</option>
+        <option value="ROSG">ROSG</option>
+        <option value="FUC">FUC</option>
+        <option value="LBLUE">LBLUE</option>
+        <option value="PINKPT">PINKPT</option>
+        <option value="CHPG">CHPG</option>
+        <option value="PASTEL">PASTEL</option>
     </select>
     
     <br><br>
@@ -155,7 +145,7 @@
             let opcion = document.getElementById("helio").value;
             let cantidad = document.getElementById("cantidad").value;
             let color = document.getElementById("color").value;
-            let pcs = document.getElementById("pcs").value;
+            var producto = document.getElementById("producto").textContent;
 
             if (!opcion) {
                 alert("Por favor, selecciona una opción de helio.");
@@ -171,11 +161,7 @@
                 alert("Por favor, selecciona una opción de color.")
             }
 
-            if (!pcs) {
-                alert("Por favor, selecciona una cantidad de piezas.")
-            }
-
-            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${pcs} Globos Pastel 12" color ${color} con la opción: ${opcion}`);
+            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${producto} color ${color} con la opción: ${opcion}`);
             let url = `https://wa.me/+50764613930?text=${mensaje}`;
             window.location.href = url;
         }
