@@ -58,7 +58,7 @@
                             if (window.history.length > 1) {
                                 window.history.back();
                             } else {
-                                window.location.href = 'index.html'; // Redirigir al index si no hay historial
+                                window.location.href = '/index.html';
                             }
                         }
                         </script>
@@ -112,6 +112,8 @@
 
     <br><br>
 
+    
+
     <label for="color">Color de la unidad:</label>
     <br>
     <select class="input" id="color">
@@ -149,7 +151,7 @@
     </select>
     
     <br><br>
-    
+
     <label class="label" for="cantidad">Cantidad de unidades:</label>
     <input class="input" type="number" id="cantidad" min="1" placeholder="Ingrese Unidades">
     
@@ -188,7 +190,7 @@
             }
 
             let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${pcs} Globos Estandar 12" color ${color} con la opción: ${opcion}`);
-            let url = `https://wa.me/+50764613930?text=${mensaje}`;
+            let url = `https://wa.me/+12345678?text=${mensaje}`;
             window.location.href = url;
         }
     </script>
@@ -293,7 +295,7 @@ document.getElementById('quantityInput').addEventListener('input', updateTotal);
                     <ul>
                         <li><a href="../../index.html">Inicio</a></li>
                         <li><a href="../../why.html">Nosotros</a></li>
-                        <li><a href="https://wa.me/+50764613930?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n">Ayuda</a></li>
+                        <li><a href="https://wa.me/+12345678?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n">Ayuda</a></li>
                         <li><a href="../../contact.html">Contacto</a></li>
                     </ul>
                 </div>
