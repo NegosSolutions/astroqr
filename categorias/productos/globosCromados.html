@@ -170,6 +170,7 @@
             let cantidad = document.getElementById("cantidad").value;
             let color = document.getElementById("color").value;
             let pcs = document.getElementById("pcs").value;
+            let medida = document.getElementById("medida").value;
 
             if (!opcion) {
                 alert("Por favor, selecciona una opción de helio.");
@@ -189,7 +190,11 @@
                 alert("Por favor, selecciona una cantidad de piezas.")
             }
 
-            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${pcs} Globos Cromados 12" color ${color} con la opción: ${opcion}`);
+            if (!medida) {
+                alert("Por favor, selecciona la medida.")
+            }
+
+            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${pcs} Globos Estándar ${medida} color ${color} con la opción: ${opcion}`);
             let url = `https://wa.me/+12345678?text=${mensaje}`;
             window.location.href = url;
         }
