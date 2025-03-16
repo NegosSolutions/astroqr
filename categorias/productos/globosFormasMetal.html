@@ -24,6 +24,8 @@
 
     <link rel="stylesheet" href="../assets/css/lightbox.css">
 
+    
+
     <!-- Diseño ᗩᔕ༒尺۝ -->
 
     </head>
@@ -58,7 +60,7 @@
                             if (window.history.length > 1) {
                                 window.history.back();
                             } else {
-                                window.location.href = '/index.html'; // Redirigir al index si no hay historial
+                                window.location.href = '../categorias/productos/index.html'; // Redirigir al index si no hay historial
                             }
                         }
                         </script>
@@ -82,20 +84,21 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="left-images">
-                    <img src="../assets/images/globos/globosPastel1.jpg" alt="">
-                    <img src="../assets/images/globos/globosLargosPastel1.jpg" alt="">
+                    <img src="../assets/images/globos/GlobosCirculoMetal1.jpg" alt="">
+                    <img src="../assets/images/globos/globosCorazonMetal1.jpg" alt="">
+                    <img src="../assets/images/globos/GlobosEstrellaMetal1.jpg" alt="">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="right-content">
                     <br>
-                    <h4>Globos Pastel 5 - 12"</h4>
+                        <h4 id="producto">Globos Metálicos de Formas"17</h4>
                     <span class="price">$0.00</span>
                     <span class="info">
                         Detalles:<br><br>
-                        &ordm Globos color Pastel<br>
-                        &ordm Tamaño: 5, 9, 12 pulgadas y globos largos<br>
-                        &ordm Cantidad por empaque: 15 o 50 piezas<br>
+                        &ordm Globos Metálicos de Formas<br>
+                        &ordm Tamaño: 17 pulgadas<br>
+                        &ordm Cantidad por empaque: 1 unidad<br>
                         &ordm Requiere ser inflado con helio o aire<br>
                         &ordm Seleccionar la cantidad de empaques <br>&nbsp deseados</span>
                     
@@ -112,39 +115,33 @@
 
     <br><br>
 
-    <label for="medida">Medida de Globo (pulgadas)</label>
-    <select class="input" id="medida">
-        <option value="">Elige una medida</option>
-        <option value="R12">12 Pulgadas</option>
-        <option value="R9">9 Pulgadas</option>
-        <option value="R5">5 Pulgadas</option>
-        <option value="R270">Globos Largos</option>
+    <label for="forma">Selecciona una opción:</label>
+    <select class="input" id="forma">
+        <option value="">Elige la forma</option>
+        <option value="Circulo Metálico">Circulo</option>
+        <option value="Corazón Metálico">Corazón</option>
+        <option value="Estrella Metálico">Estrella</option>
     </select>
-    
+
     <br><br>
 
     <label for="color">Color de la unidad:</label>
     <br>
     <select class="input" id="color">
         <option value="">Colores</option>
-        <option value="Sandia">Sandía</option>
         <option value="Rosado">Rosado</option>
-        <option value="Naranja">Naranja</option>
-        <option value="Purpura">Purpura</option>
+        <option value="Plateado">Plateado</option>
+        <option value="Dorado">Dorado</option>
+        <option value="Negro">Negro</option>
+        <option value="Blanco">Blanco</option>
         <option value="Amarillo">Amarillo</option>
-        <option value="Aqua">Aqua</option>
-        <option value="Azul">Azul</option>
+        <option value="Naranja">Naranja</option>
+        <option value="Rojo">Rojo</option>
+        <option value="Fucsia">Fucsia</option>
+        <option value="Verde">Verde</option>
         <option value="Celeste">Celeste</option>
-        <option value="Surtido">Surtido</option>
-    </select>
-    
-    <br><br>
-    
-    <label for="pcs">Piezas por unidad</label><br>
-    <select class="input" id="pcs">
-        <option value="">Elige una opción</option>
-        <option value="15Pcs">Unidad de 15 Piezas</option>
-        <option value="50Pcs">Unidad de 50 Piezas</option>
+        <option value="Navy">Navy</option>
+        <option value="Purpura">Purpura</option>
     </select>
     
     <br><br>
@@ -166,8 +163,9 @@
             let opcion = document.getElementById("helio").value;
             let cantidad = document.getElementById("cantidad").value;
             let color = document.getElementById("color").value;
-            let pcs = document.getElementById("pcs").value;
-            let medida = document.getElementById("medida").value;
+            let forma = document.getElementById("forma").value;
+            var producto = document.getElementById("producto").textContent;
+            
 
             if (!opcion) {
                 alert("Por favor, selecciona una opción de helio.");
@@ -180,19 +178,10 @@
             }
 
             if (!color) {
-                alert("Por favor, selecciona una opción de color.");
-               return;
+                alert("Por favor, selecciona una opción de color.")
             }
 
-            if (!pcs) {
-                alert("Por favor, selecciona una cantidad de piezas.")
-            }
-
-            if (!medida) {
-                alert("Por favor, selecciona la medida.")
-            }
-
-            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${pcs} Globos Estándar ${medida} color ${color} con la opción: ${opcion}`);
+            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${forma} color ${color} con la opción: ${opcion}`);
             let url = `https://wa.me/+12345678?text=${mensaje}`;
             window.location.href = url;
         }
@@ -348,6 +337,7 @@ document.getElementById('quantityInput').addEventListener('input', updateTotal);
     <script src="../assets/js/lightbox.js"></script> 
     <script src="../assets/js/isotope.js"></script> 
     <script src="../assets/js/quantity.js"></script>
+    
     
     <!-- Global Init -->
     <script src="../assets/js/custom.js"></script>
