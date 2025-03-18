@@ -58,7 +58,7 @@
                             if (window.history.length > 1) {
                                 window.history.back();
                             } else {
-                                window.location.href = 'index.html'; // Redirigir al index si no hay historial
+                                window.location.href = '/index.html'; // Redirigir al index si no hay historial
                             }
                         }
                         </script>
@@ -82,66 +82,47 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="left-images">
-                    <img src="../assets/images/globos/globosNeon1.jpg" alt="">
-                    <img src="../assets/images/globos/globosLargosNeon1.jpg" alt="">
+                    <img src="../assets/images/globos/tinnyParty1.jpg" alt="">
+                    <img src="" alt="">
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="right-content">
                     <br>
-                    <h4>Globos Neón 5 - 12"</h4>
+                        <h4 id="producto">Tinny Party</h4>
                     <span class="price">$0.00</span>
                     <span class="info">
                         Detalles:<br><br>
-                        &ordm Globos color Neón<br>
-                        &ordm Tamaño: 5, 9, 12 pulgadas y globos largos<br>
-                        &ordm Cantidad por Unidad: 15 o 50 piezas<br>
+                        &ordm Bouquet de Globos<br>
+                        &ordm Tamaño: 12 pulgadas<br>
+                        &ordm Cantidad por Unidad: 1 unidad<br>
                         &ordm Requiere ser inflado con helio o aire<br>
                         &ordm Seleccionar la cantidad de unidades<br>&nbsp deseadas</span>
                     
 <!--funcion helio y cantidad-->
 <br>
-<h2>¿Deseas helio para tus globos?</h2>
+<h2>¿Qué accesorio deseas?</h2>
 <br>
     <label for="helio">Selecciona una opción:</label>
     <select class="input" id="helio">
         <option value="">Elige una opción</option>
-        <option value="Con Helio (Por Unidad)">Con Helio (Por Unidad)</option>
-        <option value="Sin Helio">Sin Helio</option>
+        <option value="Mini Sombrero">Mini Sombrero</option>
+        <option value="Letrero Rectangular">Letrero Rectangular</option>
+        <option value="Letrero Circular">Letrero Circular</option>
+        <option value="Letrero Estrellas">Letrero Estrellas</option>
+        <option value="Letrero Happy Birthday">Letrero Happy Birthday</option>
+        <option value="Sopladores">Sopladores</option>
+
     </select>
 
-    <br><br>
-
-    <label for="medida">Medida de Globo (pulgadas)</label>
-    <select class="input" id="medida">
-        <option value="">Elige una medida</option>
-        <option value="R12">12 Pulgadas</option>
-        <option value="R9">9 Pulgadas</option>
-        <option value="R5">5 Pulgadas</option>
-        <option value="R270">Globos Largos</option>
-    </select>
-    
     <br><br>
 
     <label for="color">Color de la unidad:</label>
     <br>
     <select class="input" id="color">
         <option value="">Colores</option>
-        <option value="NaranjaNeon">Naranja Neón</option>
-        <option value="FucsiaNeon">Fucsia Neón</option>
-        <option value="MoradoNeon">Morado Neón</option>
-        <option value="AmarilloNeon">Amarillo Neón</option>
-        <option value="VerdeNeon">Verde Neón</option>
-        <option value="SurtidoNeon">Surtido Neón</option>
-    </select>
-    
-    <br><br>
-    
-    <label for="pcs">Piezas por unidad</label><br>
-    <select class="input" id="pcs">
-        <option value="">Elige una opción</option>
-        <option value="15Pcs">Unidad de 15 Piezas</option>
-        <option value="50Pcs">Unidad de 50 Piezas</option>
+        <option value="Multicolor Collection">Multicolor Collection</option>
+        <option value="Glitter Collection">Glitter Collection</option>
     </select>
     
     <br><br>
@@ -163,8 +144,7 @@
             let opcion = document.getElementById("helio").value;
             let cantidad = document.getElementById("cantidad").value;
             let color = document.getElementById("color").value;
-            let pcs = document.getElementById("pcs").value;
-            let medida = document.getElementById("medida").value;
+            var producto = document.getElementById("producto").textContent;
 
             if (!opcion) {
                 alert("Por favor, selecciona una opción de helio.");
@@ -180,15 +160,7 @@
                 alert("Por favor, selecciona una opción de color.")
             }
 
-            if (!pcs) {
-                alert("Por favor, selecciona una cantidad de piezas.")
-            }
-
-            if (!medida) {
-                alert("Por favor, selecciona la medida.")
-            }
-
-            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${pcs} Globos Estándar ${medida} color ${color} con la opción: ${opcion}`);
+            let mensaje = encodeURIComponent(`Deseo ${cantidad} unidades de ${producto} color ${color} con la opción: ${opcion}`);
             let url = `https://wa.me/+12345678?text=${mensaje}`;
             window.location.href = url;
         }
