@@ -1,1 +1,1 @@
-[# gabshop1](https://negossolutions.github.io/gabshop1/index.html)
+[# gabshop1](https://negossolutions.github.io/astroqr/index.html)
